@@ -1,12 +1,11 @@
-%% Edited by Ian Ooi 2016
+%% IEEEtranUrldate.bst
+%% BibTeX Bibliography Style file for IEEE Journals and Conferences (unsorted)
+%% Version 1.15 (2016/04/04)
+%% 
+%% Edited by Ian Ooi
 %% Added urldate field, with accompanying default and CTLname variables to 
 %% allow for last accessed date on urls
-
 %%
-%% IEEEtran.bst
-%% BibTeX Bibliography Style file for IEEE Journals and Conferences (unsorted)
-%% Version 1.14 (2015/08/26)
-%% 
 %% Copyright (c) 2003-2015 Michael Shell
 %% 
 %% Original starting code base and algorithms obtained from the output of
@@ -1941,20 +1940,20 @@ FUNCTION {format.url}
 
 FUNCTION {format.urldate}
 { is.use.url
-	{ urldate empty$
-		{ "" }
-		{ 	this.to.prev.status
-			this.status.std
-			cap.yes  'status.cap :=
-			" (" name.urldate.prefix * " " * urldate * ")" *
-			punct.no 'this.status.punct :=
-			punct.period 'prev.status.punct :=
-			quote.no 'this.status.quote :=
-		}
-	if$
-	}
-	{""}
-	if$
+  { urldate empty$
+    { "" }
+    { this.to.prev.status
+      this.status.std
+      cap.yes  'status.cap :=
+      " (" name.urldate.prefix * " " * urldate * ")" *
+      punct.no 'this.status.punct :=
+      punct.period 'prev.status.punct :=
+      quote.no 'this.status.quote :=
+  }
+  if$
+  }
+  {""}
+  if$
 }
 
 
@@ -2412,13 +2411,14 @@ FUNCTION {IEEEtranBSTCTL}
       'name.url.prefix :=
     }
   if$
-  CTLname_urldate_prefix
-  missing$
-    { skip$ }
-    { CTLname_urldate_prefix
-      'name.urldate.prefix :=
-    }
-  if$
+%  TODO figure out a way to add in this control without exceeding the function length limit
+%  CTLname_urldate_prefix
+%  missing$
+%    { skip$ }
+%    { CTLname_urldate_prefix
+%      'name.urldate.prefix :=
+%    }
+%  if$
 
 
   num.names.shown.with.forced.et.al max.num.names.before.forced.et.al >
