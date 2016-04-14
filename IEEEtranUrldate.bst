@@ -1946,8 +1946,9 @@ FUNCTION {format.urldate}
       this.status.std
       cap.yes  'status.cap :=
       " (" name.urldate.prefix * " " * urldate * ")" *
-      punct.no 'this.status.punct :=
-      punct.period 'prev.status.punct :=
+      punct.period 'this.status.punct :=
+      %punct.period 'prev.status.punct :=
+	  space.normal 'this.status.space :=
       quote.no 'this.status.quote :=
   }
   if$
