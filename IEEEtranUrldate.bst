@@ -1947,6 +1947,7 @@ FUNCTION {format.urldate}
       cap.yes  'status.cap :=
       " (" name.urldate.prefix * " " * urldate * ")" *
       punct.period 'this.status.punct :=
+	  %use this line if you want the url to have a period after it before the date accessed
       %punct.period 'prev.status.punct :=
 	  space.normal 'this.status.space :=
       quote.no 'this.status.quote :=
